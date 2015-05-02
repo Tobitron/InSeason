@@ -6,7 +6,7 @@
   <div class="row">
   <% @ripe_vegetables.each do |vegetable| %>
     <div>
-      <%= image_tag vegetable.name, alt: vegetable.name, id: "ripe", class: "medium-#{@column_size} column #{vegetable.name}" %>
+      <%= image_tag "#{vegetable.name}.jpg", alt: vegetable.name, id: "ripe", class: "medium-#{@column_size} column #{vegetable.name}" %>
     </div>
   <% end %>
   </div>
