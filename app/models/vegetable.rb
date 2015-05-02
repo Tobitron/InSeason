@@ -29,7 +29,7 @@ class Vegetable < ActiveRecord::Base
    if ripe.length == 1
      col_size = 6
    elsif ripe.length == 3
-     col_size = 4
+     col_size = 3
    elsif ripe.length == 4
      col_size = 3
    elsif ripe.length == [5..6]

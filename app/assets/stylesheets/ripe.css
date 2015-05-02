@@ -1,28 +1,23 @@
-.date {
-  padding-left: 20px;
-  width: 200px;
-}
-
 .header .title {
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 1em;
   font-size: 64px;
   text-align: center;
   font-family: 'Satisfy', cursive;
 }
 
 .image-container {
-  margin-top: 25px;
+  margin-top: 2em;
 }
 
 #ripe {
-  border: 2px solid green;
-  margin-top: 15px;
+  border: 3px solid green;
+  margin-left: .5em;
+  margin-top: 1em;
   border-radius: 50%;
 }
 
 .veg-text {
-  padding-top: 5px;
+  padding-top: .3em;
   font-family: 'Marvel', sans-serif;
   text-align: center;
   font-size: 18px;
@@ -30,7 +25,8 @@
 
 #unripe {
   border: 2px solid brown;
-  margin-top: 10px;
+  margin-left: .5em;
+  margin-top: 1em;
   -webkit-filter: grayscale(90%);
   border-radius: 50%;
 }
@@ -40,12 +36,6 @@
 }
 
 #unripe_row {
-  margin-top: 25px;
+  margin-top: 1em;
   border-top: 2px solid black;
 }
-
-/*
-  This applies a gray scale to images, pretty cool
-  element.style {
-  -webkit-filter: grayscale(80%);
- */

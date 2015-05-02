@@ -6,7 +6,7 @@
   <div class="row">
   <% @ripe_vegetables.each do |vegetable| %>
     <div>
-      <%= image_tag vegetable.name, alt: vegetable.name, id: "ripe", class: "small-#{@column_size} column" %>
+      <%= image_tag vegetable.name, alt: vegetable.name, id: "ripe", class: "medium-#{@column_size} column #{vegetable.name}" %>
     </div>
   <% end %>
   </div>
@@ -14,7 +14,7 @@
   <div class="row" id="unripe_row">
   <% @not_ripe_vegetables.each do |vegetable| %>
     <div>
-      <%= image_tag vegetable.name, alt: vegetable.name, id: "not_ripe", class: "small-2 column" %>
+      <%= image_tag vegetable.name, alt: vegetable.name, id: "unripe", class: "medium-2 column" %>
     </div>
   <% end %>
   </div>
