@@ -5,8 +5,9 @@
 <div class="image-container">
   <div class="row">
   <% @ripe_vegetables.each do |vegetable| %>
-    <div>
-      <img src="<%= asset_path(vegetable.name + ".jpg") %>" id="ripe", class="medium-<%= @column_size %> column">
+    <div class="medium-<%= @column_size %> column end" >
+      <%= image_tag vegetable.name + ".jpg", alt: vegetable.name, id: "ripe" %>
+        <div class="veg-text"><%= vegetable.name.upcase %></div>
     </div>
   <% end %>
   </div>
