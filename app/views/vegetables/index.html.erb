@@ -2,12 +2,14 @@
   <div class="title">Boston</div>
 </div>
 
-<%= image_tag "apple" %>
-<%= image_tag "apple.jpg" %>
+<% broccoli = Vegetable.where(name: "broccoli").first %>
+<%= image_tag broccoli.name + ".jpg" %>
+
 
 <div class="image-container">
   <div class="row">
   <% @ripe_vegetables.each do |vegetable| %>
+  <%= image_tag vegetable.name + ".jpg" %>
     <div>
       <%= image_tag vegetable.name + ".jpg", alt: vegetable.name, id: "ripe", class: "medium-#{@column_size} column #{vegetable.name}" %>
     </div>
