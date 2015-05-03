@@ -2,11 +2,14 @@
   <div class="title">Boston</div>
 </div>
 
+<%= image_tag "apple" %>
+<%= image_tag "apple.jpg" %>
+
 <div class="image-container">
   <div class="row">
   <% @ripe_vegetables.each do |vegetable| %>
     <div>
-      <%= image_tag "#{vegetable.name}.jpg", alt: vegetable.name, id: "ripe", class: "medium-#{@column_size} column #{vegetable.name}" %>
+      <%= image_tag vegetable.name + ".jpg", alt: vegetable.name, id: "ripe", class: "medium-#{@column_size} column #{vegetable.name}" %>
     </div>
   <% end %>
   </div>
@@ -14,7 +17,7 @@
   <div class="row" id="unripe_row">
   <% @not_ripe_vegetables.each do |vegetable| %>
     <div>
-      <%= image_tag vegetable.name, alt: vegetable.name, id: "unripe", class: "medium-2 column" %>
+      <%= image_tag vegetable.name + ".jpg", alt: vegetable.name, id: "unripe", class: "medium-2 column" %>
     </div>
   <% end %>
   </div>
