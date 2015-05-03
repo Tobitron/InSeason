@@ -2,11 +2,15 @@
   <div class="title">Boston</div>
 </div>
 
+<img src="<%= asset_path("apple") %>" id="ripe", class="medium-<%= @column_size %> column">
+<img src="<%= asset_path("apple.jpg") %>" id="ripe", class="medium-<%= @column_size %> column">
+
 <div class="image-container">
   <div class="row">
   <% @ripe_vegetables.each do |vegetable| %>
     <div>
       <img src="<%= asset_path(vegetable.name) %>" id="ripe", class="medium-<%= @column_size %> column">
+      <img src="<%= asset_path(vegetable.name + ".jpg") %>" id="ripe", class="medium-<%= @column_size %> column">
     </div>
   <% end %>
   </div>
