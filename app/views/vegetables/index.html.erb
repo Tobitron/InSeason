@@ -4,9 +4,9 @@
 
 <div class="image-container">
   <div class="row">
-  <% @ripe_vegetables.each do |vegetable| %>
+  <% @ripe_vegetables.each_with_index do |vegetable, i| %>
     <div>
-      <img src="<%= asset_path("apple" + ".jpg") %>" id="ripe", class="medium-<%= @column_size %> column">
+      Hello <%= i %>
     </div>
   <% end %>
   </div>
@@ -14,7 +14,7 @@
   <div class="row" id="unripe_row">
   <% @not_ripe_vegetables.each do |vegetable| %>
     <div>
-      <%= image_tag vegetable.name + ".jpg", alt: vegetable.name, id: "unripe", class: "medium-2 column" %>
+      <img src="<%= asset_path("apple" + ".jpg") %>" id="ripe", class="medium-<%= @column_size %> column">
     </div>
   <% end %>
   </div>
