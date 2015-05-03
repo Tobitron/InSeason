@@ -2,12 +2,14 @@
   <div class="title">Boston</div>
 </div>
 
+<% 10.times do %>
+    greetings
+<% end %>
+
 <div class="image-container">
   <div class="row">
   <% @ripe_vegetables.each_with_index do |vegetable, i| %>
-    <div>
       Hello <%= i %>
-    </div>
   <% end %>
   </div>
 
