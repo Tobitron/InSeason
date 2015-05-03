@@ -2,21 +2,19 @@
   <div class="title">Boston</div>
 </div>
 
-<% 10.times do %>
-    greetings
-<% end %>
-
 <div class="image-container">
   <div class="row">
-  <% @ripe_vegetables.each_with_index do |vegetable, i| %>
-      Hello <%= i %>
+  <% @ripe_vegetables.each do |vegetable| %>
+    <div>
+      <img src="<%= asset_path(vegetable.name + ".jpg") %>" id="ripe", class="medium-<%= @column_size %> column">
+    </div>
   <% end %>
   </div>
 
   <div class="row" id="unripe_row">
   <% @not_ripe_vegetables.each do |vegetable| %>
     <div>
-      <img src="<%= asset_path("apple" + ".jpg") %>" id="ripe", class="medium-<%= @column_size %> column">
+      <%= image_tag vegetable.name + ".jpg", alt: vegetable.name, id: "unripe", class: "medium-2 column" %>
     </div>
   <% end %>
   </div>
