@@ -39,8 +39,6 @@ class Vegetable < ActiveRecord::Base
    else ripe.length == [12..50]
      col_size = 2
    end
-
    col_size
  end
-
 end
