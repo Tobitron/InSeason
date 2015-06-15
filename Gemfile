@@ -15,7 +15,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   gem 'pry'
   gem 'web-console', '~> 2.0'
-  gem 'spring'
+  gem 'spring', '~> 1.3.6'
 end
 
 ruby "2.0.0"

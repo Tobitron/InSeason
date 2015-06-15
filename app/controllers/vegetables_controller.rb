@@ -14,7 +14,6 @@ class VegetablesController < ApplicationController
         ripe_end = Date.strptime("2015-#{vegetable.end_day}", "%Y-%j")
         formatted_end = ripe_end.strftime('%B %-d')
         ripe_span[vegetable.name] = [start_day: formatted_start, end_day: formatted_end]
-        ripe_span[vegetable.name]
       else
         ripe_start = Date.strptime("2015-#{vegetable.start_day}", "%Y-%j")
         formatted_start = ripe_start.strftime('%B %-d')
@@ -24,6 +23,7 @@ class VegetablesController < ApplicationController
       end
     end
 
+    # TODO make this guy dynamic
     current_year = 2015
 
     veg_data = { year: current_year, ripe_span: ripe_span, names: veg_names }

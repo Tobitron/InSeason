@@ -7,7 +7,7 @@ class Vegetable < ActiveRecord::Base
    ripe_vegetables = []
 
    Vegetable.all.each do |vegetable|
-     if (vegetable.start_day..vegetable.end_day).include?(@date || @winter_veg_date)
+     if (vegetable.start_day..vegetable.end_day).include?(@date) || (vegetable.start_day..vegetable.end_day).include?(@winter_veg_date)
        ripe_vegetables << vegetable
      end
    end
