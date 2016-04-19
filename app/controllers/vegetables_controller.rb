@@ -9,22 +9,22 @@ class VegetablesController < ApplicationController
 
     Vegetable.all.each do |vegetable|
       if !vegetable.winter_vegetable
-        ripe_start = Date.strptime("2015-#{vegetable.start_day}", "%Y-%j")
+        ripe_start = Date.strptime("2016-#{vegetable.start_day}", "%Y-%j")
         formatted_start = ripe_start.strftime('%B %-d')
-        ripe_end = Date.strptime("2015-#{vegetable.end_day}", "%Y-%j")
+        ripe_end = Date.strptime("2016-#{vegetable.end_day}", "%Y-%j")
         formatted_end = ripe_end.strftime('%B %-d')
         ripe_span[vegetable.name] = [start_day: formatted_start, end_day: formatted_end]
       else
-        ripe_start = Date.strptime("2015-#{vegetable.start_day}", "%Y-%j")
+        ripe_start = Date.strptime("2016-#{vegetable.start_day}", "%Y-%j")
         formatted_start = ripe_start.strftime('%B %-d')
-        ripe_end = Date.strptime("2015-#{vegetable.end_day - 365}", "%Y-%j")
+        ripe_end = Date.strptime("2016-#{vegetable.end_day - 365}", "%Y-%j")
         formatted_end = ripe_end.strftime('%B %-d')
         ripe_span[vegetable.name] = [start_day: formatted_start, end_day: formatted_end]
       end
     end
 
     # TODO make this guy dynamic
-    current_year = 2015
+    current_year = 2016
 
     veg_data = { year: current_year, ripe_span: ripe_span, names: veg_names }
 
