@@ -5,6 +5,13 @@
   font-family: 'Satisfy', cursive;
 }
 
+h3 {
+    margin-top: .5em;
+    font-size: 12px;
+    text-align: center;
+    font-family: 'Marvel', sans-serif;
+}
+
 .image-container {
   margin-top: 2em;
 }
@@ -31,11 +38,25 @@
   border-radius: 50%;
 }
 
+.ripe_veg {
+    margin-left: 1em;
+}
+
+.column,
+ .columns {
+   position: relative;
+   padding-left: 0rem;
+   padding-right: 0rem;
+   float: left;
+ }
+
 .row {
   width: 65%;
 }
 
 #unripe_row {
+  padding-left: none;
+  padding-right: none;
   margin-top: 1em;
   border-top: 2px solid black;
 }

@@ -1,11 +1,12 @@
 <div class="header">
   <div class="title">Boston</div>
+  <h3>Coming soon to a city near you! ...Whenever I find an open source veggie database.</h3>
 </div>
 
 <div class="image-container">
   <div class="row">
   <% @ripe_vegetables.each do |vegetable| %>
-    <div class="medium-<%= @column_size %> column end" >
+    <div class="ripe_veg medium-<%= @column_size %> column end">
       <%= image_tag vegetable.name + ".jpg", class: vegetable.name, alt: vegetable.name, id: "ripe" %>
         <div class="veg-text"><%= vegetable.name.upcase %></div>
     </div>
