@@ -1,23 +1,45 @@
 <div class="header">
   <div class="title">Boston</div>
-  <div class="subtext">Coming soon to a city near you! ...Whenever I find an open source veggie database.</div>
+  <div class="subtext">Coming soon to a city near you (as soon as I find an open source veggie database)! </div>
 </div>
 
-<div class="image-container">
-  <div class="row">
-  <% @ripe_vegetables.each do |vegetable| %>
-    <div class="ripe_veg medium-<%= @column_size %> column end">
+
+<div class="row">
+<% @ripe_vegetables.each do |vegetable| %>
+  <div class="ripe_veg medium-<%= @column_size %> column end">  
+    <div class="veg-text"><%= vegetable.name.upcase %></div>
+    <div class="ripe-veg-overlay">
       <%= image_tag vegetable.name + ".jpg", class: vegetable.name, alt: vegetable.name, id: "ripe" %>
-        <div class="veg-text"><%= vegetable.name.upcase %></div>
     </div>
-  <% end %>
+    <div class="ripe-dates-<%= vegetable.name %> ripe-dates"></div>
   </div>
-
-  <div class="row" id="unripe_row">
-  <% @not_ripe_vegetables.each do |vegetable| %>
-    <div>
-      <%= image_tag vegetable.name + ".jpg", class: vegetable.name, alt: vegetable.name, id: "unripe", class: "medium-2 column" %>
-    </div>
-  <% end %>
-  </div>
+<% end %>
 </div>
+
+<div class="row" id="unripe_row">
+<% @not_ripe_vegetables.each do |vegetable| %>
+  <div>
+    <%= image_tag vegetable.name + ".jpg", class: vegetable.name, alt: vegetable.name, id: "unripe", class: "medium-2 column" %>
+  </div>
+<% end %>
+</div>
+
+
+<script type="text/javascript">
+
+  var current_json_url = location.href + 'vegetables.json'
+
+  $.get(current_json_url, function(veg_data) {
+    veg_data.names.forEach(function(vegetable) {
+      $("." + vegetable).mouseover(function() {
+        var ripe_dates =  veg_data.ripe_span[vegetable][0].start_day + " - " + veg_data.ripe_span[vegetable][0].end_day;
+        $(".ripe-dates-" + vegetable).text(ripe_dates);
+      });
+      
+      $("." + vegetable).mouseout(function() {
+        $(".ripe-dates-" + vegetable).empty();
+      });
+    });
+  })
+
+</script>

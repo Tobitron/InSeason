@@ -12,19 +12,32 @@
     font-family: 'Marvel', sans-serif;
 }
 
-.image-container {
-  margin-top: 2em;
-}
 
 #ripe {
   border: 3px solid green;
-  margin-left: .5em;
-  margin-top: 1em;
+  border-radius: 50%;
+  width: 100%;
+}
+
+#ripe:hover {
+  opacity: .3;
+}
+
+.ripe-veg-overlay:hover {
+  background-color: green;
   border-radius: 50%;
 }
 
+.ripe-dates {
+  position: absolute;
+  color: gray;
+  text-align: center;
+  width: 100%;
+}
+
 .veg-text {
-  padding-top: .3em;
+  padding-top: 2.5em;
+  padding-bottom: .5em;
   font-family: 'Marvel', sans-serif;
   text-align: center;
   font-size: 18px;
@@ -57,6 +70,14 @@
 #unripe_row {
   padding-left: none;
   padding-right: none;
-  margin-top: 1em;
+  margin-top: 2.5em;
   border-top: 2px solid black;
 }
+
+
+@media (max-width: 640px) {
+  .ripe_veg {
+      margin-left: 0px;
+  }  
+}
+
